@@ -11,7 +11,7 @@ Let's take a look at the format difference between `zoho.currentime` and Zoho da
 For the update to work, you would first need to convert `zoho.currenttime` into the Zoho date-time field format. Conversely, if you `GET` date-time fields on Zoho, you would not be able to perform any calculations in Deluge before converting the date-time field into the `zoho.currentime` format. All these can be done via string manipulations.
 
 ## Understanding Zoho Date-Time Field Format
-The date-time field format can be dissected into 4 parts: [2020-12-09] [T] [17:25:24] [-07:00]
+The format for Zoho's date-time field can be dissected into 4 parts: [2020-12-09] [T] [17:25:24] [-07:00]
 1. [2020-12-09] = date format (yyyy-MM-dd)
 2. [T] = represents time
 3. [17:25:24] = time format (hh:mm:ss)
