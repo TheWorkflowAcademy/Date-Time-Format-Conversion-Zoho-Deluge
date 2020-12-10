@@ -55,7 +55,7 @@ info dateTime_FORMATTED;
 When you `GET` a Zoho date-time field, you will be returned with the Zoho date-time format. If you need to perform calculations on Deluge, you need to reverse convert it into Deluge's date time format (which is basically the reverse of what we just did). 
 
 ```javacript
-dateTime = "INSERT YOUR ZOHO DATE-TIME FIELD HERE";
+dateTime = "INSERT_YOUR_ZOHO_DATE-TIME_FIELD_ HERE";
 dateTime_CONVERT = dateTime.replaceAll("T"," ");
 ```
 
