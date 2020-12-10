@@ -1,5 +1,5 @@
 # Date-Time-Format-Conversion-Zoho-Deluge
-A script that converts a date-time into a format that is accepted for updating Zoho's date-time fields as well as to decode a Zoho date-time field into a format that can be used for calculation in Deluge.
+A script that converts Deluge's date-time format into a format that is acceptabe for updating Zoho's date-time fields and vice-versa.
 
 ## Core Idea
 Zoho demands a very specific format for updating date-time fields via Deluge. Suppose you want to update the time of function execution into a date-time field in Zoho. If you input `zoho.currenttime` into the update, it will return an `INVALID DATA` error due to formatting.
