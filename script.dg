@@ -1,0 +1,41 @@
+//1. Convert Date-Time Format from Deluge to Zoho
+
+//Define the Time Zone
+timeZone = "-07:00";  //Change to your system time zone.
+
+//Get the Current Date Time
+dateTime = zoho.currenttime;
+
+//Trim Out the Date and Format It
+dateTime_DATE = dateTime.left(dateTime.indexof(" ")).toString("yyyy-MM-dd");
+
+//Trim Out the Time
+dateTime_TIME = dateTime.right(dateTime.len() - dateTime.indexof(" "));
+
+//Combine the Date, Time and Time Zone in the Required Format
+dateTime_FORMATTED = (dateTime_DATE + "T" + dateTime_TIME + timeZone).remove(" ");
+info dateTime_FORMATTED;
+
+
+
+//2. Convert Date-Time Format from Zoho to Deluge, Calculate, and Convert Back
+
+//Define the Time Zone
+timeZone = "-07:00";  //Change to your system time zone.
+
+//Reformat
+zohoDateTime = "GET_ZOHO_DATE_TIME_FIELD_HERE";
+zohoDateTime_CONVERT = zohoDateTime.replaceAll("T"," ");
+
+//Perform Calculation
+zohoDateTime_2 = zohoDateTime_CONVERT.addHour(1); //Change this accordingly
+
+//Trim Out the Date and Format It
+zohoDateTime_2_DATE = zohoDateTime_2.left(zohoDateTime_2.indexof(" ")).toString("yyyy-MM-dd");
+
+//Trim Out the Time
+zohoDateTime_2_TIME = zohoDateTime_2.right(zohoDateTime_2.len() - zohoDateTime_2.indexof(" "));
+
+//Combine the Date, Time and Time Zone in the Required Format
+zohoDateTime_2_FORMATTED = (zohoDateTime_2_DATE + "T" + zohoDateTime_2_TIME + timeZone).remove(" ");
+info zohoDateTime_2_FORMATTED;
