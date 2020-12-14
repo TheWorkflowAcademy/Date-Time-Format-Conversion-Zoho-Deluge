@@ -1,6 +1,6 @@
 //1. Convert Date-Time Format from Deluge to Zoho
 
-//Define the Time Zone
+//Set the Time Zone Variable
 timeZone = "-07:00";  //Change to your system time zone.
 
 //Get the Current Date Time
