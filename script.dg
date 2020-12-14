@@ -5,12 +5,13 @@ timeZone = "-07:00";  //Change to your system time zone.
 
 //Get the Current Date Time
 dateTime = zoho.currenttime;
+info dateTime;
 
 //Trim Out the Date and Format It
-dateTime_DATE = dateTime.left(dateTime.indexof(" ")).toString("yyyy-MM-dd");
+dateTime_DATE = dateTime.getPrefix(" ").toString("yyyy-MM-dd");
 
 //Trim Out the Time
-dateTime_TIME = dateTime.right(dateTime.len() - dateTime.indexof(" "));
+dateTime_TIME = dateTime.getSuffix(" ");
 
 //Combine the Date, Time and Time Zone in the Required Format
 dateTime_FORMATTED = (dateTime_DATE + "T" + dateTime_TIME + timeZone).remove(" ");
@@ -31,10 +32,10 @@ zohoDateTime_CONVERT = zohoDateTime.replaceAll("T"," ");
 zohoDateTime_2 = zohoDateTime_CONVERT.addHour(1); //Change this accordingly
 
 //Trim Out the Date and Format It
-zohoDateTime_2_DATE = zohoDateTime_2.left(zohoDateTime_2.indexof(" ")).toString("yyyy-MM-dd");
+zohoDateTime_2_DATE = zohoDateTime_2.getPrefix(" ").toString("yyyy-MM-dd");
 
 //Trim Out the Time
-zohoDateTime_2_TIME = zohoDateTime_2.right(zohoDateTime_2.len() - zohoDateTime_2.indexof(" "));
+zohoDateTime_2_TIME = zohoDateTime_2.getSuffix(" ");
 
 //Combine the Date, Time and Time Zone in the Required Format
 zohoDateTime_2_FORMATTED = (zohoDateTime_2_DATE + "T" + zohoDateTime_2_TIME + timeZone).remove(" ");
