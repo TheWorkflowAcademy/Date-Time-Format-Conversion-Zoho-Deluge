@@ -52,7 +52,7 @@ info dateTime_FORMATTED;
 ```
 
 ## Tutorial - Converting Date-Time Format from Zoho to Deluge
-When you `GET` a Zoho date-time field, you will be returned with the Zoho date-time format. If you need to perform calculations on Deluge, you need to reverse convert it into Deluge's date time format (which is basically the reverse of what we just did). 
+When you `GET` a Zoho date-time field, you will be returned with the Zoho date-time format. If you need to perform calculations on Deluge, you need to reverse convert it into Deluge's date time format (which is basically the reverse of what we just did). This can be done by simply replacing the "T" with a space " ".
 
 ```javacript
 zohoDateTime = "GET_ZOHO_DATE_TIME_FIELD_HERE";
