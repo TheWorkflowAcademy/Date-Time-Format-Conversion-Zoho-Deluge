@@ -61,7 +61,7 @@ zohoDateTime_CONVERT = zohoDateTime.replaceAll("T"," ");
 
 Despite not trimming out the time-zone, the date-time is now in a Deluge-parsable format allowing you to perform any [date-time additions/subtractions](https://www.zoho.com/deluge/help/functions/date-time.html). 
 
-To update the date-time into a Zoho date-time field, you would need to format it back by [repeating the steps above.](#trim-out-the-date-and-format-it)
+To update the date-time into a Zoho date-time field, you would need to format it back by [repeating the steps above.](#define-the-time-zone)
 
 ## Note
 This post is for date-time **format** conversion only. For **time zone** conversion, please refer to [Zoho's documentation on `toTime` function.](https://www.zoho.com/deluge/help/functions/common/totime.html)
