@@ -19,7 +19,7 @@ The format for Zoho's date-time field can be dissected into 4 parts: [2020-12-09
 
 ## Tutorial - Converting Date-Time Format from Deluge to Zoho
 
-### Define the Time Zone
+### Set the Time Zone Variable
 The time zone format here is based on GMT. As for us in Utah, it would be GMT-7, therefore [-07:00]. To check your company system time zone, you can go to Setup > General > Company Details. 
 ```javascript
 timeZone = "-07:00";  //Change to your system time zone.
