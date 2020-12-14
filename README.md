@@ -32,16 +32,16 @@ dateTime = zoho.currenttime;
 ```
 
 ### Trim Out the Date and Format It
-Get the index of the space " ", and use a `left` function to extract the date. Then, format it to "yyyy-MM-dd" with a `toString` function.
+Use the `getPrefix` function with reference to the space to extract the date. Then, format it to "yyyy-MM-dd" with a `toString` function.
 ```javascript
-dateTime_DATE = dateTime.left(dateTime.indexof(" ")).toString("yyyy-MM-dd");
+dateTime_DATE = dateTime.getPrefix(" ").toString("yyyy-MM-dd");
 ```
 
 ### Trim Out the Time
-Use a `len` funciton to get the character length, then minus the index of space " " to get the total number of characters from the **right** to the **space**. Then, use a `right` function to trim it out.
+To get the time, use the `getSuffix` function with reference to space.
 
 ```javascript
-dateTime_TIME = dateTime.right(dateTime.len() - dateTime.indexof(" "));
+dateTime_TIME = dateTime.getSuffix(" ");
 ```
 
 ### Combine the Date, Time and Time Zone in the Required Format
