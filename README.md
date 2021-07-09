@@ -19,44 +19,44 @@ The format for Zoho's date-time field can be dissected into 4 parts: [2020-12-09
 
 ## Tutorial - Converting Date-Time Format from Deluge to Zoho
 
+### Get the Current Date Time
+`zoho.currenttime` will return you the current date-time of the function execution based on your Application Settings.
+```javascript
+time = zoho.currenttime;
+```
+
 ### Set the Time Zone Variable
 The time zone format here is based on GMT. As for us in Utah, it would be GMT-7, therefore [-07:00]. To check your company system time zone, you can go to Setup > General > Company Details. 
 ```javascript
 timeZone = "-07:00";  //Change to your system time zone.
 ```
 
-### Get the Current Date Time
-`zoho.currenttime` will return you the current date-time of the function execution based on your Application Settings.
-```javascript
-dateTime = zoho.currenttime;
-```
-
 ### Trim Out the Date and Format It
 Use the `getPrefix` function with reference to the space to extract the date. Then, format it to "yyyy-MM-dd" with a `toString` function.
 ```javascript
-dateTime_DATE = dateTime.getPrefix(" ").toString("yyyy-MM-dd");
+justDate = time.getPrefix(" ").toString("yyyy-MM-dd");
 ```
 
 ### Trim Out the Time
 To get the time, use the `getSuffix` function with reference to space.
 
 ```javascript
-dateTime_TIME = dateTime.getSuffix(" ");
+justTime = time.getSuffix(" ");
 ```
 
 ### Combine the Date, Time and Time Zone in the Required Format
 Now that you have the date, time and time zone variables ready, merge them all together in the required format (with the "T"), and remove the additional space with the `remove` function. Your date-time is now ready to be updated into any date-time fields in Zoho.
 ```javascript
-dateTime_FORMATTED = (dateTime_DATE + "T" + dateTime_TIME + timeZone).remove(" ");
-info dateTime_FORMATTED;
+timeReformat = (justDate + "T" + justTime + timeZone).remove(" ");
+info timeReformat;
 ```
 
 ## Tutorial - Converting Date-Time Format from Zoho to Deluge
 When you `GET` a Zoho date-time field, you will be returned with the Zoho date-time format. If you need to perform calculations on Deluge, you need to reverse convert it into Deluge's date time format (which is basically the reverse of what we just did). This can be done by simply replacing the "T" with a space " ".
 
 ```javacript
-zohoDateTime = "GET_ZOHO_DATE_TIME_FIELD_HERE";
-zohoDateTime_CONVERT = zohoDateTime.replaceAll("T"," ");
+time = "GET_ZOHO_DATE_TIME_FIELD_HERE";
+timeReformat = zohoDateTime.replaceAll("T"," ");
 ```
 
 Despite not trimming out the time-zone, the date-time is now in a Deluge-parsable format allowing you to perform any [date-time additions/subtractions](https://www.zoho.com/deluge/help/functions/date-time.html). 
